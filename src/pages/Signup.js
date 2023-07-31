@@ -22,6 +22,7 @@ function Signup() {
 					<Form style={{ width: '100%' }} onSubmit={handleSignup}>
 						<h1>Create an account</h1>
 						{isError && <Alert variant='danger'>{error.data}</Alert>}
+						{/* name */}
 						<Form.Group>
 							<Form.Label>Name</Form.Label>
 							<Form.Control
@@ -33,6 +34,7 @@ function Signup() {
 							/>
 						</Form.Group>
 
+						{/* email */}
 						<Form.Group>
 							<Form.Label>Email Address</Form.Label>
 							<Form.Control
@@ -44,6 +46,7 @@ function Signup() {
 							/>
 						</Form.Group>
 
+						{/* password */}
 						<Form.Group className='mb-3'>
 							<Form.Label>Password</Form.Label>
 							<Form.Control
@@ -55,6 +58,7 @@ function Signup() {
 							/>
 						</Form.Group>
 
+						{/* create account */}
 						<Form.Group>
 							<Button type='submit' disabled={isLoading}>
 								Create account

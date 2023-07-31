@@ -20,6 +20,7 @@ function Login() {
 					<Form style={{ width: '100%' }} onSubmit={handleLogin}>
 						<h1>Login to your account</h1>
 						{isError && <Alert variant='danger'>{error.data}</Alert>}
+						{/* email */}
 						<Form.Group>
 							<Form.Label>Email Address</Form.Label>
 							<Form.Control
@@ -31,6 +32,7 @@ function Login() {
 							/>
 						</Form.Group>
 
+						{/* password */}
 						<Form.Group className='mb-3'>
 							<Form.Label>Password</Form.Label>
 							<Form.Control
@@ -42,6 +44,7 @@ function Login() {
 							/>
 						</Form.Group>
 
+						{/* login button */}
 						<Form.Group>
 							{/* disabled={isLoading} so we don't spam we clicking */}
 							<Button type='submit' disabled={isLoading}>
@@ -49,6 +52,7 @@ function Login() {
 							</Button>
 						</Form.Group>
 
+						{/* to register */}
 						<p className='pt-3 text-center'>
 							Don't have an account? <Link to='/signup'>Create account</Link>
 						</p>
