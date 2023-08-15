@@ -1,13 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Form, Row, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Signup.css';
 import { useLoginMutation } from '../services/appApi';
+import axios from 'axios';
 
 function Login() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [login, { isError, isLoading, error }] = useLoginMutation();
+
+	const [banners, setBanners] = useState([]);
+
+	useEffect(() => {
+		// 1
+		axios
+			.get('http://localhost:1035/banners')
+			.then(({ data }) => {
+				setBanners(data);
+				console.log(banners);
+			})
+			.catch((e) => {
+				console.log(e);
+			});
+	}, []);
+
+	const forthBan = banners[3];
 
 	function handleLogin(e) {
 		e.preventDefault();
@@ -58,7 +76,16 @@ function Login() {
 						</p>
 					</Form>
 				</Col>
-				<Col md={6} className='login__image--container'></Col>
+				{/* login__image--container */}
+				<Col md={6} className=''>
+					{forthBan && (
+						<img
+							src={forthBan?.pictures[0].url}
+							className='firstImg home-banner'
+							alt=''
+						/>
+					)}
+				</Col>
 			</Row>
 		</Container>
 	);

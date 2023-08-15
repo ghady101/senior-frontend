@@ -15,7 +15,7 @@ const stripePromise = loadStripe(
 	'pk_test_51NSwXdAll00F4Nf0cMB8yzUYAgbe9Y1iWdkLEksoiuEqmu9TNse6aANGf3ltIDkxtCT7nnO1WX3YSEwriVNeHkRC00uNCQ7M1J'
 );
 
-function CartPage() {
+function Cart() {
 	const user = useSelector((state) => state.user);
 	const products = useSelector((state) => state.products);
 	const userCartObj = user.cart;
@@ -129,4 +129,4 @@ function CartPage() {
 	);
 }
 
-export default CartPage;
+export default Cart;

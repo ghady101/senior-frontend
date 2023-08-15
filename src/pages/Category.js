@@ -3,11 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { Loading, ProductPreview } from '../components/ComponentImport';
-import './CategoryPage.css';
+import './Category.css';
 
-function CategoryPage() {
+function Category() {
 	const { category } = useParams();
-	console.log(category);
 	const [loading, setLoading] = useState(false);
 	const [products, setProducts] = useState([]);
 	const [searchTerm, setSearchTerm] = useState('');
@@ -19,6 +18,7 @@ function CategoryPage() {
 			.then(({ data }) => {
 				setLoading(false);
 				setProducts(data);
+				console.log(products);
 			})
 			.catch((e) => {
 				setLoading(false);
@@ -33,6 +33,7 @@ function CategoryPage() {
 	const productsSearch = products.filter((product) =>
 		product.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
 	);
+	// console.log(products);
 
 	return (
 		<div className='category-page-container'>
@@ -69,4 +70,4 @@ function CategoryPage() {
 	);
 }
 
-export default CategoryPage;
+export default Category;

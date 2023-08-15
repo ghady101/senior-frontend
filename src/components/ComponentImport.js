@@ -1,6 +1,12 @@
 export { default as Announcement } from './Announcement';
 export { default as CheckoutForm } from './CheckoutForm';
 
+export { default as DashboardBanners } from './DashboardBanners';
+export { default as DashboardUsers } from './DashboardUsers';
+export { default as DashboardProducts } from './DashboardProducts';
+export { default as DashboardOrders } from './DashboardOrders';
+export { default as DashboardCategories } from './DashboardCategories';
+
 export { default as Navigation } from './Navigation';
 export { default as Pagination } from './Pagination';
 

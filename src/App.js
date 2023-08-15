@@ -15,6 +15,11 @@ import {
 	Category,
 	Cart,
 	Orders,
+	AdminDashboard,
+	EditBanner,
+	EditProduct,
+	NewCategory,
+	NewProduct,
 } from './pages/PageImport';
 
 import { addNotification } from './features/userSlice';
@@ -58,6 +63,7 @@ function App() {
 							<Route path='/signup' element={<Signup />} />
 						</>
 					)}
+
 					{/* signed up as user */}
 					{user && !user.isAdmin && (
 						<>
@@ -65,8 +71,17 @@ function App() {
 							<Route path='/orders' element={<Orders />} />
 						</>
 					)}
+
 					{/* signed up as admin */}
-					{user && user.isAdmin && <></>}
+					{user && user.isAdmin && (
+						<>
+							<Route path='/admin' element={<AdminDashboard />} />
+							<Route path='/banner/:id/edit' element={<EditBanner />} />
+							<Route path='/product/:id/edit' element={<EditProduct />} />
+							<Route path='/new-product' element={<NewProduct />} />
+							<Route path='/new-category' element={<NewCategory />} />
+						</>
+					)}
 
 					{/* for every */}
 					<Route path='/product/:id' element={<Product />} />

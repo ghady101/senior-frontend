@@ -35,7 +35,7 @@ function Navigation() {
 		<Navbar bg='light' expand='lg'>
 			<Container>
 				<LinkContainer to='/'>
-					<Navbar.Brand>Senior</Navbar.Brand>
+					<Navbar.Brand>FootWear</Navbar.Brand>
 				</LinkContainer>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>

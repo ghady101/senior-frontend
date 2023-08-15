@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Signup.css';
 import { useSignupMutation } from '../services/appApi';
+import axios from 'axios';
 
 function Signup() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [name, setName] = useState('');
 	const [signup, { error, isLoading, isError }] = useSignupMutation();
+
+	const [banners, setBanners] = useState([]);
+	const thirdBan = banners[2];
+
+	useEffect(() => {
+		// 1
+		axios
+			.get('http://localhost:1035/banners')
+			.then(({ data }) => {
+				setBanners(data);
+			})
+			.catch((e) => {
+				console.log(e);
+			});
+	}, []);
 
 	function handleSignup(e) {
 		e.preventDefault();
@@ -69,7 +85,16 @@ function Signup() {
 						</p>
 					</Form>
 				</Col>
-				<Col md={6} className='signup__image--container'></Col>
+				{/* signup__image--container */}
+				<Col md={6} className=''>
+					{thirdBan && (
+						<img
+							src={thirdBan?.pictures[0].url}
+							className='firstImg home-banner'
+							alt=''
+						/>
+					)}
+				</Col>
 			</Row>
 		</Container>
 	);

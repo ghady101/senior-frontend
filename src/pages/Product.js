@@ -12,7 +12,7 @@ import {
 } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import './ProductPage.css';
+import './Product.css';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useAddToCartMutation } from '../services/appApi';
 import {
