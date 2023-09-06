@@ -85,6 +85,7 @@ function Cart() {
 														height: 100,
 														objectFit: 'cover',
 													}}
+													alt=''
 												/>
 											</td>
 											<td>${item.price}</td>
