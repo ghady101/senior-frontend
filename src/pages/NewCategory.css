@@ -28,7 +28,7 @@
 
 
 .new-product__image--container {
-    background-image: url(/public/pics/admin/1.png);
+    /* background-image: url(/public/pics/admin/1.png); */
     background-size: cover;
     background-position: center;
     height: 50vh;
