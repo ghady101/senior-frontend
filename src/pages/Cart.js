@@ -11,8 +11,12 @@ import {
 } from '../services/appApi';
 import './CartPage.css';
 
+// const stripePromise = loadStripe(
+// 	'pk_test_51NSwXdAll00F4Nf0cMB8yzUYAgbe9Y1iWdkLEksoiuEqmu9TNse6aANGf3ltIDkxtCT7nnO1WX3YSEwriVNeHkRC00uNCQ7M1J'
+// );
+
 const stripePromise = loadStripe(
-	'pk_test_51NSwXdAll00F4Nf0cMB8yzUYAgbe9Y1iWdkLEksoiuEqmu9TNse6aANGf3ltIDkxtCT7nnO1WX3YSEwriVNeHkRC00uNCQ7M1J'
+	'pk_test_51NRKp6InKlEfTnI9JxvLaTkfYpI16sztA6QvccDZ9JKfmKi6uIqTijOUi6sNtHNVv2S4vHhEeBFeSGBYB5lPUrNx00lfwblXGB'
 );
 
 function Cart() {
@@ -36,7 +40,7 @@ function Cart() {
 			<Row>
 				<Col>
 					<h1 className='pt-2 h3'>Shopping cart</h1>
-					{cart.length == 0 ? (
+					{cart.length === 0 ? (
 						<Alert variant='info'>
 							Shopping cart is empty. Add products to your cart
 						</Alert>
